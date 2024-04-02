@@ -1,0 +1,1326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <style>
+      /* Adjust sidebar styling */
+      .body{
+        margin: 0;
+        padding: 0;
+      }
+     
+      .sidebar {
+        position: fixed;
+        top: 120px;
+        left: 0;
+        height: 100%;
+        width: 300px;
+        background-color: #333;
+        padding: 20px;
+        color: #fff;
+        overflow-y: auto; /* Enable vertical scrolling */
+      }
+  
+      /* Adjust main content area */
+      .content {
+        margin-left: 300px; /* Same as sidebar width */
+        padding: 20px;
+        
+      }
+      @media (max-width: 767px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        left: 0;
+        position: relative;
+      }
+      .content {
+       /* Same as sidebar width */
+       margin-left: 0;
+        padding: 20px;
+      }
+    }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" href="nav.css">
+
+    <!-- NavBar -->
+  
+    <div class="sticky-container">
+      <div class="top-bar">
+        <p style="display: flex; justify-content: center; align-items: center;"><img src="carIcons/nav-icons/whatsapp.png" style="margin-right: 10px;" width="20px"> +355 68 608 6868 & +355 67 492 2727</p>
+        <p style="display: flex; justify-content: center; align-items: center;"><img src="carIcons/nav-icons/location-pin.png" style="margin-right: 10px;" width="20px"> Tirana International Airport, Rinas</p>
+        <p style="display: flex; justify-content: center; align-items: center;"><img src="carIcons/nav-icons/delivery.png" style="margin-right: 10px;" width="20px"> 24h Open</p>
+        
+      </div>
+      <nav>
+        <ul class="nav-sidebar">
+          <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26"
+                viewBox="0 96 960 960" width="26">
+                <path
+                  d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+              </svg></a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-fleet.html">Our Fleet</a></li>
+          <li><a href="FAQs.html">FAQs</a></li>
+          <li><a href="tel:+355686086868">Call Now</a></li>
+        </ul>
+        <ul>
+          <li><a href="index.html">
+              <h1>Auto Activity</h1>
+            </a></li>
+          <li class="hideOnMobile"><a href="index.html">Home</a></li>
+          <li class="hideOnMobile"><a href="our-fleet.html">Our Fleet</a></li>
+          <li class="hideOnMobile"><a href="FAQs.html">FAQs</a></li>
+          <li class="hideOnMobile"><a href="tel:+355686086868">Call Now</a></li>
+          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                height="26" viewBox="0 96 960 960" width="26">
+                <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+              </svg></a></li>
+        </ul>
+      </nav>
+    </div>
+  
+
+
+
+  <script>
+   function showSidebar(){
+  const sidebar = document.querySelector('.nav-sidebar');
+  sidebar.style.display = 'flex';
+
+  // Hide footer
+  const footer = document.querySelector('.footer');
+  footer.style.display = 'none';
+  }
+
+  function hideSidebar(){
+  const sidebar = document.querySelector('.nav-sidebar');
+  sidebar.style.display = 'none';
+
+  // Show footer
+  const footer = document.querySelector('.footer');
+  footer.style.display = 'block';
+  }
+  </script>
+
+    
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 p-0 m-0">
+          <div class="sidebar">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">What Are You Looking For</label>
+              <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="Search for a car">
+            </div>
+            <!--- start of Downdrop divs--->
+            <div class="accordion" id="accordionPanelsStayOpenExample" style="padding-bottom: 120px;">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Car Brands
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <div><input type="checkbox" id="audiCheckbox" value="Audi" data-category="carBrands"> Audi </div>
+                    <div><input type="checkbox" id="bmwCheckbox" value="BMW" data-category="carBrands"> BMW </div>
+                    <div><input type="checkbox" id="fiatCheckbox" value="Fiat" data-category="Fiat"> Fiat </div>
+                    <div><input type="checkbox" id="fordCheckbox" value="Ford" data-category="carBrands"> Ford</div>
+                    <div><input type="checkbox" id="mercedesCheckbox" value="Mercedes Benz" data-category="carBrands"> Mercedes Benz</div>
+                    <div><input type="checkbox" id="seatCheckbox" value="Seat" data-category="carBrands"> Seat</div>
+                    <div><input type="checkbox" id="toyotaCheckbox" value="Toyota" data-category="carBrands"> Toyota</div>
+                    <div><input type="checkbox" id="volkswagenCheckbox" value="Volkswagen" data-category="carBrands"> Volkswagen</div>
+                    <div><input type="checkbox" id="volvoCheckbox" value="Volvo" data-category="carBrands"> Volvo</div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Car Type
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <div><input type="checkbox" id="suvCheckbox" value="suv" data-category="type"> SUV</div>
+                    <div><input type="checkbox" id="sedanCheckbox" value="sedan" data-category="type"> Sedan</div>
+                    <div><input type="checkbox" id="hatchbackCheckbox" value="hatchback" data-category="type"> Hatchback</div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Car Category
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <div><input type="checkbox" id="economicCheckbox" value="economic" data-category="category"> Economic</div>
+                    <div><input type="checkbox" id="normalCheckbox" value="normal" data-category="category"> Normal</div>
+                    <div><input type="checkbox" id="luxuryCheckbox" value="luxury" data-category="category"> Luxury</div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Gearbox
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <div><input type="checkbox" id="manualCheckbox" value="Manual"  data-category="gearbox"> Manual</div>
+                    <div><input type="checkbox" id="automaticCheckbox" value="Automatic"  data-category="gearbox"> Automatic</div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Capacity
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <div><input type="checkbox" id="5PersonsCheckbox" value="5 persons"  data-category="personsNo"> 5 Persons</div>
+                    <div><input type="checkbox" id="7PersonsCheckbox" value="7 persons"  data-category="personsNo"> 7 Persons</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--- End of dropdown divs --->
+
+           
+          </div>
+
+         
+        </div>
+        <!-- Main Content -->
+        <div class="col-md-12" >
+          <div class="content" style="margin-top: 120px;">
+            <div class="row" id="listingContainer">
+           
+              
+           
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- start of dropdown-->
+    
+      <!-- end of dropdown -->
+
+      <!-- start of dividions -->
+     
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  // Sample array of listings (replace with your own data)
+  var listings = [
+    {
+      carBrands: "Audi",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "normal",
+      carModels: "A3",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_a3_2012.jpg",
+      link: "carsPages/audi-a3-2012.html"
+    },
+    {
+      carBrands: "You Click. ",
+      carModels: "We pick",
+      type: "?",
+      isSuv: "carIcons/sedan.png",
+      category: "?",
+      gearbox: "?",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: "?",
+      fuel: "?",
+      engine: "?" ,
+      personsNo: "?",
+      image: "carPhotos/Untitleddesign.png",
+      link: "carsPages/you-pick-we-choose.html"
+    },
+    {
+      carBrands: "Audi",
+      carModels: "A4",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2013,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_a4_2013.jpg",
+      link: "carsPages/audi-a4-2013.html"
+    },
+    {
+      carBrands: "Audi",
+      carModels: "A4",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2010,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_a4_2010.jpg",
+      link:"carsPages/audi-a4-2010.html"
+    },
+    {
+
+      carBrands: "Audi",
+      carModels: "A4",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2008,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_a4_2008.jpg",
+      link: "carsPages/audi-a4-2008.html"
+    },
+    {
+     
+      carBrands: "Audi",
+      carModels: "A5",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2013,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_a5_2013.jpg",
+      link: "carsPages/audi-a5-2013.html"
+    },
+    {
+     
+      carBrands: "Audi",
+      carModels: "A5",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_a5_2012.jpg",
+     link: "carsPages/audi-a5-2012.html"
+    },
+    {
+     
+      carBrands: "Audi",
+      carModels: "A6",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "3.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_a6_2012.jpg",
+      link: "carsPages/audi-a6-2012.html"
+    },
+    {
+    
+      carBrands: "Audi",
+      carModels: "A6",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2013,
+      fuel: "diesel",
+      engine: "3.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_a6_2013.jpg",
+      link: "carsPages/audi-a6-2013.html"
+    },
+    {
+      carBrands: "Audi",
+      carModels: "A8L",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2014,
+      fuel: "diesel",
+      engine: "3.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_a8L_2014.jpg",
+      link: "carsPages/audi-a8L-2014.html"
+    },
+    {
+      
+      carBrands: "Audi",
+      carModels: "Q2",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2020,
+      fuel: "diesel",
+      engine: "1.6" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_q2_2020.jpg",
+      link: "carsPages/audi-q2-2020.html"
+    },
+    {
+    
+      carBrands: "Audi",
+      carModels: "Q3",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2016,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_q3_2016.jpg",
+      link: "carsPages/audi-q3-2016.html"
+    },
+    {
+   
+      carBrands: "Audi",
+      carModels: "Q3",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2020,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_q3_2020.jpg",
+      link: "carsPages/audi-q3-2020.html"
+    },
+    {
+   
+      carBrands: "Audi",
+      carModels: "Q5",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2013,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_q5_2013.jpg",
+      link: "carsPages/audi-q5-2013.html"
+    },
+    {
+ 
+      carBrands: "Audi",
+      carModels: "Q5",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2016,
+      fuel: "diesel",
+      engine: "3.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/audi_q5_2016.jpg",
+      link: "carsPages/audi-q5-2016.html"
+    },
+    {
+     
+      carBrands: "Audi",
+      carModels: "Q7",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2009,
+      fuel: "diesel",
+      engine: "3.0" ,
+      personsNo: "7 persons",
+      image: "carPhotos/audi_q7_2009.jpg",
+      link: "carsPages/audi-q7-2009.html"
+
+    },
+    {
+    
+      carBrands: "Audi",
+      carModels: "Q7",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2014,
+      fuel: "diesel",
+      engine: "3.0" ,
+      personsNo: "7 persons",
+      image: "carPhotos/audi_q7_2014.jpg",
+      link: "carsPages/audi-q7-2014.html"
+    },
+    {
+      carBrands: "BMW",
+      carModels: "1 series",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2014,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw-seria1.jpeg",
+      link: "carsPages/bmw-1series-2014.html"
+    },
+    {
+      carBrands: "BMW",
+      carModels: "3 series",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw_seria_3_2012.jpg",
+      link: "carsPages/bmw-3series-2012.html"
+    },
+    {
+    
+      carBrands: "BMW",
+      carModels: "3 series GT",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw_series_3gt_2012.png",
+      link: "carsPages/bmw-3series-gt.html"
+    },
+    {
+     
+      carBrands: "BMW",
+      carModels: "5 series",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw_seria_5_2012.jpg",
+      link: "carsPages\bmw-5series-2012.html"
+    },
+    {
+     
+      carBrands: "BMW",
+      carModels: "5 series GT",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw_seria_5_GT_2012.jpg",
+      link: "carsPages\bmw-5series-gt.html"
+    },
+    {
+    
+      carBrands: "BMW",
+      carModels: "X1",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2013,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw_x1_2013.jpg",
+      link: "carsPages/bmw-x1-2013.html"
+    }, 
+    {
+     
+      carBrands: "BMW",
+      carModels: "X1",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2014,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw_x1_2014.jpg",
+      link: "carsPages/bmw-x1-2014.html"
+    },
+    {
+     
+      carBrands: "BMW",
+      carModels: "X3",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw_x3_2012.jpg",
+      link: "carsPages/bmw-x3-2012.html"
+    },
+    {
+    
+      carBrands: "BMW",
+      carModels: "X5",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2010,
+      fuel: "diesel",
+      engine: "3.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw_x5_2010.jpg",
+      link: "carsPages/bmw-x5-2010.html"
+    },
+    {
+    
+      carBrands: "BMW",
+      carModels: "X6",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2010,
+      fuel: "diesel",
+      engine: "3.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/bmw-x6-.jpeg",
+      link: "carsPages/bmw-x6-2010.html"
+    },
+    {
+    
+      carBrands: "Fiat",
+      carModels: "Bravo",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2008,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/fiat_bravo_2008.jpg",
+      link: "carsPages/fiat-bravo-2008.html"
+    },
+    {
+   
+      carBrands: "Ford",
+      carModels: "Fiesta",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Manual",
+      year: 2008,
+      fuel: "diesel",
+      engine: "1.4" ,
+      personsNo: "5 persons",
+      image: "carPhotos/2007-ford-fiesta.jpg",
+      isAutomatic: "carIcons/manual-transmission.png",
+      link: "carsPages/ford-fiesta-2008.html"
+    },
+    {
+   
+      carBrands: "Ford",
+      carModels: "Fiesta",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Automatic",
+      year: 2015,
+      fuel: "diesel",
+      engine: "1.4" ,
+      personsNo: "5 persons",
+      image: "carPhotos/fiesta 2015.jpeg",
+      isAutomatic: "carIcons/automatic-transmission.png",
+      link:"carsPages/ford-fiesta-2015.html"
+    },
+    {
+  
+      carBrands: "Mercedes Benz",
+      carModels: "C Class",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2010,
+      fuel: "diesel",
+      engine: "3.5" ,
+      personsNo: "5 persons",
+      image: "carPhotos/MB_c_class_2010.jpg",
+      link: "carsPages/mercedes-c-class.html"
+    },
+    {
+    
+      carBrands: "Mercedes Benz",
+      carModels: "GLK",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2014,
+      fuel: "diesel",
+      engine: "2.2" ,
+      personsNo: "5 persons",
+      image: "carPhotos/mercedes_glk_2014.jpg",
+      link: "carsPages/mercedes-glk-2014.html"
+    },
+    {
+      
+      carBrands: "Seat",
+      carModels: "Altea",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2010,
+      fuel: "diesel",
+      engine: "1.9" ,
+      personsNo: "5 persons",
+      image: "carPhotos/seat-altea-xl-sport-packet-1-9-tdi-2008-3900.jpeg",
+      link: "carsPages/seat-altea-2010.html"
+    },
+    {
+      carBrands: "Toyota",
+      carModels: "Auris",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2008,
+      fuel: "diesel",
+      engine: "1.4" ,
+      personsNo: "5 persons",
+      image: "carPhotos/auris.jpg",
+      link: "carsPages/toyota-auris-automatic.html"
+    },
+    {
+    
+      carBrands: "Toyota",
+      carModels: "Auris",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Manual",
+      year: 2008,
+      fuel: "diesel",
+      engine: "1.4" ,
+      personsNo: "5 persons",
+      image: "carPhotos/auris.jpg",
+      link:  "carsPages/toyota-auris-manual.html"
+    },
+    {
+     
+      carBrands: "Toyota",
+      carModels: "Yaris",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Manual",
+      year: 2009,
+      fuel: "diesel",
+      engine: "1.4" ,
+      personsNo: "5 persons",
+      image: "carPhotos/toyota_yaris_2009.jpg",
+      isAutomatic: "carIcons/manual-transmission.png",
+      link: "carsPages/toyota-yaris-2009.html"
+    },
+    {
+      
+      carBrands: "Volkswagen",
+      carModels: "Golf 5",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Manual",
+      year: 2009,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/vw_golf_2009.jpg",
+      isAutomatic: "carIcons/manual-transmission.png",
+      link: "carsPages/vw-golf5-manual.html"
+    },
+    {
+     
+      carBrands: "Volkswagen",
+      carModels: "Golf 5",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2009,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/vw_golf_2009.jpg",
+      link: "carsPages/vw-golf5-automatic.html"
+    },
+    {
+
+      carBrands: "Volkswagen",
+      carModels: "Golf 6",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2011,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/volkswagen_golf_2010.jpg",
+      link: "carsPages/vw-golf6-2011.html"
+    },
+    {
+
+      carBrands: "Volkswagen",
+      carModels: "Jetta",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/volkswagen_jetta_2012.jpg",
+      link: "carsPages/vw-jetta-2012.html"
+    },
+    {
+    
+      carBrands: "Volkswagen",
+      carModels: "Passat",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2012,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/volkswagen_passat_2012.jpg",
+      link:"carsPages\vw-passat-2012.html"
+    },
+    {
+
+      carBrands: "Volkswagen",
+      carModels: "Passat",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "normal",
+      gearbox: "Manual",
+      year: 2008,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/volkswagen_passat_2008.jpg",
+      isAutomatic: "carIcons/manual-transmission.png",
+      link:"carsPages/vw-passat-2008.html"
+    },
+    {
+      
+      carBrands: "Volkswagen",
+      carModels: "Passat CC",
+      type: "sedan",
+      isSuv: "carIcons/sedan.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2014,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/volkswagen_cc_2014.jpg",
+      link:"carsPages/vw-passat-cc-2014.html"
+    },
+    {
+     
+      carBrands: "Volkswagen",
+      carModels: "Polo",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2011,
+      fuel: "diesel",
+      engine: "1.4",
+      personsNo: "5 persons",
+      image: "carPhotos/vw-polo-1-6-tdi-2012.jpeg",
+      link:"carsPages/vw-polo-2011.html"
+    },
+    {
+      carBrands: "Volkswagen",
+      carModels: "Golf 5 Plus",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Manual",
+      year: 2008,
+      fuel: "diesel",
+      engine: "2.0",
+      personsNo: "5 persons",
+      isAutomatic: "carIcons/manual-transmission.png",
+      link:"carsPages/vw-golf5-plus.html"
+    },
+    {
+   
+      carBrands: "Volkswagen",
+      carModels: "Golf 6 Plus",
+      type: "hatchback",
+      isSuv: "carIcons/hatchback.png",
+      category: "economic",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2010,
+      fuel: "diesel",
+      engine: "2.0",
+      personsNo: "5 persons",
+      image: "carPhotos/golf6+.jpeg",
+      link: "carsPages/vw-golf6-plus.html"
+    },
+    {
+
+      carBrands: "Volkswagen",
+      carModels: "Tiguan",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2010,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "5 persons",
+      image: "carPhotos/volkswagen_tiguan_2010.jpg",
+      link:"carsPages/vw-tiguan-2010.html"
+    },
+    {
+     
+      carBrands: "Volkswagen",
+      carModels: "Tiguan",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2020,
+      fuel: "diesel",
+      engine: "2.0" ,
+      personsNo: "7 persons",
+      image: "carPhotos/volkswagen_tiguan_2020.jpg",
+      link:"carsPages/vw-tiguan-2020.html"
+     
+    },
+    {
+     
+     carBrands: "Volkswagen",
+     carModels: "Touran",
+     type: "suv",
+     isSuv: "carIcons/suv.png",
+     category: "normal",
+     gearbox: "Automatic",
+     isAutomatic:"carIcons/automatic-transmission.png",
+     year: 2011,
+     fuel: "diesel",
+     engine: "2.0" ,
+     personsNo: "7 persons",
+     image: "carPhotos/turan 2011.jpg",
+     link: "carsPages/vw-touran-2011.html"
+    
+   },
+   {
+     
+     carBrands: "Volkswagen",
+     carModels: "Touran",
+     type: "suv",
+     isSuv: "carIcons/suv.png",
+     category: "luxury",
+     gearbox: "Automatic",
+     isAutomatic:"carIcons/automatic-transmission.png",
+     year: 2014,
+     fuel: "diesel",
+     engine: "2.0" ,
+     personsNo: "7 persons",
+     image: "carPhotos/touran-2014.jpeg",
+     link: "carsPages/vw-touran-2014.html"
+    
+   },
+    {
+    
+      carBrands: "Volvo",
+      carModels: "XC60",
+      type: "suv",
+      isSuv: "carIcons/suv.png",
+      category: "luxury",
+      gearbox: "Automatic",
+      isAutomatic:"carIcons/automatic-transmission.png",
+      year: 2010,
+      fuel: "diesel",
+      engine: "2.4" ,
+      personsNo: "5 persons",
+      image: "carPhotos/volvo_xc60_2010.jpg",
+      link:"carsPages\volvo-xc60.html"
+    }
+  ];
+
+
+// Function to generate HTML for each listing item with three columns
+const searchInput = document.getElementById("exampleFormControlInput1");
+
+// Combine the event listeners into one
+searchInput.addEventListener("input", function () {
+  const searchText = searchInput.value.toLowerCase();
+  const selectedValues = [];
+  document.querySelectorAll('[data-category]:checked').forEach(checkbox => {
+    selectedValues.push(checkbox.value);
+  });
+
+  const filteredListings = listings.filter(listing => {
+    return (
+      (listing.carBrands.toLowerCase().includes(searchText) ||
+      listing.carModels.toLowerCase().includes(searchText)) &&
+      selectedValues.some(value => [listing.carBrands, listing.type].includes(value))
+    );
+  });
+  // Replace displayListings with populateListings
+  populateListings(filteredListings);
+});
+
+// Function to filter listings based on search input and checkbox selection
+function filterListings() {
+  const searchText = searchInput.value.toLowerCase();
+  const selectedValues = [];
+  // Get selected values in all checkboxes
+  document.querySelectorAll('[data-category]:checked').forEach(checkbox => {
+    selectedValues.push(checkbox.value);
+  });
+  
+  const allFilteredListings = [];
+  listings.forEach(listing => {
+    if (
+      (listing.carBrands.toLowerCase().includes(searchText) ||
+        listing.carModels.toLowerCase().includes(searchText)) &&
+      selectedValues.some(value => [listing.carBrands, listing.type].includes(value))
+    ) {
+      allFilteredListings.push(listing);
+    }
+  });
+  // Filter listings based on search input and selected checkbox values
+  populateListings(allFilteredListings);
+}
+
+// Function to populate listings into the container
+function populateListings(listings) {
+  var listingContainer = $('#listingContainer');
+  listingContainer.empty(); // Clear previous listings
+
+  if (listings.length === 0) {
+    // Show a message when there are no listings
+    setTimeout(() => populateFullListings(), 0);
+  } else {
+    // Loop through listings and generate HTML for each
+    listings.forEach(function(listing) {
+      var listingHTML = generateListingHTML(listing);
+      listingContainer.append(listingHTML);
+    });
+  }
+}
+
+function populateFullListings() {
+  filteredListings = listings;
+  populateListings(filteredListings);
+}
+
+// Populate listings initially
+populateListings(listings);
+
+// Adjust layout based on screen size changes
+$(window).on('resize', function() {
+  var screenWidth = $(window).width();
+
+  // Determine the number of columns based on screen width
+  var columns = screenWidth <= 800 ? 3 : 2;
+
+  // Adjust column classes for each listing item
+  $('#listingContainer > .col-md-4').removeClass('col-md-4').addClass('col-md-' + (12 / columns));
+});
+
+
+
+
+   
+// Function to display the filtered listings
+
+
+// Your existing code
+// ... (rest of your code)
+
+// Display the listings initially
+
+
+// A single event listener for search input is enough, no need to add another one
+
+
+    // Your existing code for generateListingHTML, populateListings, and layout adjustment
+    function generateListingHTML(listing) {
+  return `
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="${listing.image}" class="card-img-top" alt="${listing.carBrands}">
+        <div class="card-body">
+          <h4 class="card-title ">${listing.carBrands} ${listing.carModels}</h4>
+          <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col">
+                <p >  
+                        
+                          <img width="40px" src="${listing.isSuv}">
+                            ${listing.type}
+                        
+                    </p>
+                    <p >
+                        <img width="40px" src="carIcons/category.png" > 
+                        ${listing.category}
+                    </p>
+                    
+                    <p >  
+                        
+                          <img width="40px" src="${listing.isAutomatic}">
+                            ${listing.gearbox}</p>
+
+                            <p >
+                        <img width="40px" src="carIcons/car-year.png" >  
+                        ${listing.year}
+                    </p>
+                        
+              </div>
+              <div class="col">
+                <p >
+                        <img width="40px" src="carIcons/fuel.png" >  
+                       ${listing.fuel}
+                    </p>
+                    <p >
+                        <img width="40px" src="carIcons/car-engine.png" > 
+                        ${listing.engine}
+                    </p>
+                    <p >
+                        <img width="40px" src="carIcons/persons.png" >  
+                        ${listing.personsNo}
+                    </p>
+              </div>
+              <a href="${listing.link}" class="btn btn-primary">Rent Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+document.querySelectorAll('[data-category]').forEach(category => {
+  category.addEventListener("change", function (event) {
+    if (!event.target.checked) {
+      populateFullListings();
+    } else {
+      filterListings();
+    }
+  });
+});
+
+
+// Function to filter listings based on search input and checkbox selection
+
+
+// Modify filterListings function to consider all selected checkboxes
+function filterListings() {
+  const searchText = searchInput.value.toLowerCase();
+  const selectedValues = [];
+
+  // Get selected values in all checkboxes
+  document.querySelectorAll('[data-category]:checked').forEach(checkbox => {
+    selectedValues.push(checkbox.value);
+  });
+
+  let filteredListings = listings.filter(listing => {
+    // Check if the listing matches the search text
+    const matchesSearchText = (
+      listing.carBrands.toLowerCase().includes(searchText) ||
+      listing.carModels.toLowerCase().includes(searchText)
+    );
+
+    
+
+    // Check if the listing matches all selected checkboxes
+    const matchesSelectedValues = selectedValues.every(value => {
+      return (
+        listing.carBrands === value ||
+        listing.type === value ||
+        listing.category === value ||
+        listing.gearbox === value ||
+        listing.personsNo === value
+      );
+    });
+
+    return matchesSearchText && matchesSelectedValues;
+  });
+
+  // Populate listings based on filtered results
+  populateListings(filteredListings);
+}
+
+// Combine the event listeners for search input and checkboxes
+searchInput.addEventListener("input", filterListings);
+
+document.querySelectorAll('[data-category]').forEach(category => {
+  category.addEventListener("change", filterListings);
+});
+
+searchInput.addEventListener("input", function () {
+  const searchText = searchInput.value.toLowerCase();
+  const filteredListings = listings.filter(listing => 
+    listing.carBrands.toLowerCase().includes(searchText) ||
+    listing.carModels.toLowerCase().includes(searchText)
+  );
+  populateListings(filteredListings);
+});
+
+// Function to populate listings into the container
+function populateListings(listings) {
+  var listingContainer = document.getElementById('listingContainer');
+  listingContainer.innerHTML = ''; // Clear previous listings
+
+  if (listings.length === 0) {
+    // Show a message when there are no listings
+    listingContainer.innerHTML = "<p>No listings found.</p>";
+  } else {
+    // Loop through listings and generate HTML for each
+    listings.forEach(function(listing) {
+      var listingHTML = generateListingHTML(listing);
+      listingContainer.innerHTML += listingHTML;
+    });
+  }
+}
+
+
+// Function to parse URL query parameters
+function getQueryParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  return urlParams.get(param);
+}
+
+// Read query parameter and set corresponding checkbox as checked
+const carBrand = getQueryParam('carBrand');
+if (carBrand) {
+  // Replace special characters with underscores and convert to lowercase
+  const checkboxId = carBrand.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase() + 'Checkbox';
+  
+  // Check the corresponding checkbox if it exists
+  const checkbox = document.getElementById(checkboxId);
+  if (checkbox) {
+    checkbox.checked = true;
+  }
+}
+const category = getQueryParam('category');
+if (category) {
+  // Replace special characters with underscores and convert to lowercase
+  const checkboxId = category.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase() + 'Checkbox';
+  
+  // Check the corresponding checkbox if it exists
+  const checkbox = document.getElementById(checkboxId);
+  if (checkbox) {
+    checkbox.checked = true;
+  }
+}
+
+// Trigger filtering based on the query parameter
+filterListings();
+   
+
+
+   
+
+  
+
+
+
+
+</script>
+</html>
